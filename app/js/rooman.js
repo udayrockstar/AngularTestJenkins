@@ -9,7 +9,7 @@ var app =  angular.module("roomanhindu", []);
 // });
 
 app.controller("RoomanCntl", ["$scope", function($scope,roomanConverter){
-    // roomanConverter.test;
+    // roomanConverter.test; small changes
      var num = $scope.rooman;
 
      $scope.convert = function(){
