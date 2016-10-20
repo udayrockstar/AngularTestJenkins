@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="broadcastTest">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src="app/bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="app/bower_components/angular-mocks/angular-mocks.js"></script>
+        <script type="text/javascript" src="app/bower_components/angular/angular-route.min.js"></script>
+        <script type="text/javascript" src="app/js/app.js"></script>
+        <script type="text/javascript" src="app/js/roman_conversion.js"></script>
+    </head>
+    <body>
+        <div id="roman">
+            hello
+        </div>
+        <!-- Parent Controller -->
+        
+        <div ng-controller="myController" id="container">
+            <h1>First Controller
+                {{name}}</h1>
+                <!-- Child Controller -->
+            <div ng-controller="secondController">
+                <h1>Second Controller
+                    {{name}}</h1>
+            </div>
+        </div>
+
+
+        <!-- For Http Request -->
+        <div ng-controller="MovieController">
+            <h1>HTTP Request Here</h1>
+            <button type="button" ng-click="getMovieData()" name="button">Get Data</button>
+        </div>
+
+        <div class="jasmine_reporter" id="HTMLReporter"></div>
+
+        <div id="out">Hello</div>
+        <!-- <div ng-controller="romanCntl">
+            <a href="#/uday">
+                <button type="button" name="button">Roman Number</button>
+            </a>
+            <div ng-view></div>
+        </div> -->
+    </body>
+</html>

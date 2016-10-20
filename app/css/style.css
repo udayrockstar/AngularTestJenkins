@@ -1,0 +1,24 @@
+.container{
+    text-align: center;
+}
+.first-block {
+    width: auto;
+    height: 100px;
+    background: pink;
+}
+
+.top-controller{
+    width: auto;
+    height: 300px;
+    background: #F5F5DC;
+}
+.one-controller{
+    width: auto;
+    height: 100px;
+    background: red;
+}
+.two-controller{
+    width: auto;
+    height: 100px;
+    background: orange;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="roomanhindu">
+    <head>
+        <meta charset="utf-8">
+        <title>Rooman to number conversion</title>
+        <script type="text/javascript" src="app/bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="app/js/rooman.js"></script>
+    </head>
+    <body>
+        <h1>Rooman to Numeric Conversion</h1>
+
+        <div ng-controller="RoomanCntl">
+            <div class="">
+                <label for="">Roman Number</label>
+                <input type="text" ng-model="rooman" name="name" value="123">
+            </div>
+            <div>
+                <label for="">Hindu number</label>
+                <input type="text" name="name" ng-model="hindunum">
+                {{rooman}}
+            </div>
+        </div>
+    </body>
+</html>

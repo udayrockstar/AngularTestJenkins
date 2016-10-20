@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="broadcastTest">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src="app/bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="app/bower_components/angular-mocks/angular-mocks.js"></script>
+        <script type="text/javascript" src="app/js/app.js"></script>
+        <!-- <script type="text/javascript" src="app/js/roman_conversion.js"></script> -->
+
+    </head>
+    <body>
+
+        <div class="roman-class">
+            <label for="">Enter Roman Number</label>
+            <input type="text" name="name" ng-model="roman_num" value="">
+        </div>
+        <div id="roman">
+            hello
+        </div>
+        <script type="text/javascript">
+        function toarabic(num) {
+            vals = {
+                'I': 1,
+                'V': 5,
+                'X': 10,
+                'L': 50,
+                'C': 100,
+                'D': 500,
+                'M': 1000
+            };
+            num = num.toUpperCase().replace(/[^IVXLCDM]/g, '').replace(/VV/g, 'X').replace(/LL/g, 'C').replace(/DD/g, 'M');
+
+            // var bits = [],i=j=rep=sum = 0,k, l, n = num.length,last = 9999,valid = 1;
+
+            var bits = [],
+                i = 0,
+                j = 0,
+                k, l, n = num.length,
+                last = 9999,
+                rep = 0,
+                sum = 0,
+                valid = 1;
+                console.log(num.length);
+            for (; i < n; i++) {
+                if (!(bits[j] = vals[num.charAt(i)])) {
+                    valid = 0;
+                    break;
+                }
+                if (j > 0) {
+                    k = bits[j];
+                    l = bits[j - 1];
+                    if (k === l * 5 || k === l * 10) {
+                        bits[--j] = k - l;
+                    }
+                }
+                j++;
+            }
+            if (valid) {
+                for (i = 0; i < j; i++) {
+                    k = bits[i];
+                    sum += k;
+                    if ((last < k) ||
+                        (rep > 1 && last == k) ||
+                        (last == k && k != 1 && k != 10 && k != 100 && k != 1000) ||
+                        last == k * 4 || last == k * 9 || last * 4 == k * 9 || last * 5 == k * 9) {
+                        valid = 0;
+                        break;
+                    }
+                    rep = (last == k) ? rep + 1 : 0;
+                    last = k;
+                }
+            }
+            return valid ? sum : 'Enter a proper Roman number please.';
+        }
+        var roma = document.getElementById("roman");
+            // console.log(toarabic("X").toSource());
+        var romanor = toarabic("MMMCMXCVIII");
+            roma.innerHTML = romanor;
+        </script>
+
+        <!-- <script type="text/javascript">
+            var out = document.getElementById('out');
+            // for (var i = 1; i <= 100; ++i) {
+            //     out.innerHTML += i + "\t =" + romanize(i) + "<br/>";
+            // }
+            out.innerHTML = romanize(40);
+            function romanize(num) {
+var lookup = {M: 1000,CM: 900,D: 500,CD: 400,C: 100,XC: 90,L: 50,XL: 40,X: 10,IX: 9,V: 5,IV: 4,I: 1},
+                    roman = '',
+                    i;
+                for (i in lookup) {
+                    // console.log("i value = "+i);
+                    while (num >= lookup[i]) {
+                        // console.log(lookup[i]);
+                        roman += i;
+                        num -= lookup[i];
+                        // console.log("Lookups = "+lookup[i]);
+                        // console.log("Roman ="+ roman);
+                        // console.log("Number ="+ num);
+                    }
+                }
+                return roman;
+            }
+        </script> -->
+    </body>
+</html>
