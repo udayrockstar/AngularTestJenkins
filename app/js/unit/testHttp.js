@@ -34,6 +34,13 @@
             $httpBackend.flush();
             expect($scope.status).toEqual(200);
         });
+        it('should load default movies (with mock http request)', function() {
+            var moviesController = $controller('MovieController', {
+                $scope: $scope
+            });
+            $httpBackend.flush();
+            expect(3).toEqual(3);
+        });
 
         /*************************** Testing Services *************************************************************************/
 

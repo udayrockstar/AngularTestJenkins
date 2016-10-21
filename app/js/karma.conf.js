@@ -1,6 +1,12 @@
 // Karma configuration
 // Generated on Mon Sep 26 2016 12:38:13 GMT+0530 (India Standard Time)
 
+singleRun = true;
+reporters = ['dots', 'junit'];
+junitReporter = {
+  outputFile: 'test-results.xml'
+};
+
 module.exports = function(config) {
   config.set({
 
@@ -61,13 +67,6 @@ module.exports = function(config) {
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['PhantomJS'],
     // browsers: ['PhantomJS'],
-
-    singleRun = true;
-    reporters = ['dots', 'junit'];
-    junitReporter = {
-      outputFile: 'test-results.xml'
-    };
-
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
