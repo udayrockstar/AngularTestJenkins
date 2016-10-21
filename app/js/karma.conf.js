@@ -62,6 +62,12 @@ module.exports = function(config) {
     browsers: ['PhantomJS'],
     // browsers: ['PhantomJS'],
 
+    singleRun = true;
+    reporters = ['dots', 'junit'];
+    junitReporter = {
+      outputFile: 'test-results.xml'
+    };
+
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
