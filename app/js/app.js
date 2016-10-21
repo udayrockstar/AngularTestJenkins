@@ -1,4 +1,5 @@
 var app = angular.module('broadcastTest', []);
+// commit below code
 // app.config(['$routeProvider',
 //   function($routeProvider) {
 //     $routeProvider.
@@ -42,7 +43,7 @@ app.controller('myController', function($scope, $rootScope) {
 
 app.factory("myService", ['$http', function($http) {
     return {
-        getResponders: (function(response) {    
+        getResponders: (function(response) {
             return $http.get('http://localhost/test_cases/app/js/example.json')
                 .then(function(response, status) {
                     console.log("coming from servicejs", response.data);
