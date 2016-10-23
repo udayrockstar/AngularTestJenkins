@@ -1,5 +1,5 @@
-<testsuite tests="3">
-    <testcase classname="foo1" name="ASuccessfulTest"/>
+<xml version="1.0">
+    <project name="test_cases"/>
     <testcase classname="foo2" name="AnotherSuccessfulTest"/>
     <testcase classname="foo3" name="AFailingTest">
         <failure type="NotEnoughFoo"> details about failure </failure>
